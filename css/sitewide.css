@@ -1,0 +1,591 @@
+/* ------------------------------------------------------------ */
+/* imports and utilities */
+
+/* 3rd-party CSS files */
+@import 'vendor/h5bp-head.css';
+@import 'vendor/normalize.css';
+@import 'vendor/h5bp-tail.css';
+
+/* use a more intuitive box sizing model (http://is.gd/wNVjAo) */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* Scale down images and embedded videos so they don't overflow their parents */
+img, object { max-width: 100%; }
+
+/*	Development/layout aid. Remove the comments
+	on this rule in order to draw boxes around DIVs
+	and other elements used for layout. */
+/*
+div, main, article, section, aside, hgroup, header, footer, address, nav {
+	border: 1px solid rgba(255,0,0,0.15) !important;
+	background: rgba(255,0,0,0.05) !important;
+}
+*/
+
+
+/* ------------------------------------------------------------ */
+/* start project-specifc styles below this line */
+
+.container {
+	padding: 1em;
+	min-height: 100%;
+	/*max-width: 800;*/
+
+	/*background-color: #F0F0F0;*/
+}
+
+body {
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: #222;
+	height:100%;
+}
+
+h1	{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 3.5em;
+	line-height: 1em;
+	margin-bottom: 0;
+	transition:0.7;
+}
+
+.playtitle	{
+	font-weight: 600;
+	margin-top:0;
+}
+
+h2	{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	font-size: 3em;
+	line-height: 1em;
+	padding-right: 200px;
+	margin-bottom: 20px;
+	text-decoration: underline;
+}
+
+.h2name	{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 1.6em;
+	line-height: 1em;
+	/*padding-top: 30px;
+	padding-left: 10px;*/
+	padding-right: 0;
+	margin:0;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+h3	{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 1.2em;
+	line-height: 1em;
+	padding:0;
+	margin:0;
+}
+
+.title-intro	{
+	padding:0;
+	padding-top:70px;
+	padding-bottom:10px;
+	font-size: 1.1em;
+}
+
+.writtenby	{
+	font-size: 1.7em;
+	padding-bottom: 13px;
+	padding-top: 13px;
+
+}
+
+.subtitle {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 1.8em;
+	line-height: 1em;
+	padding-top:70px;
+	padding-bottom: 30px;
+	margin:0;
+	letter-spacing: 1px;
+}
+
+.menu-list	{
+	text-align: center;
+}
+
+.date	{
+	padding-top:7px;
+}
+
+p	{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+}
+
+.pabout	{
+	width:90%;
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+
+.menu-type	{
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	font-weight: 800;
+	font-size: 1.9em;
+	color: black;
+	/*transition: 0.3s;*/
+}
+
+.menu-type:hover	{
+	transition: 0.3s;
+	opacity: 0.5;
+}
+
+.menu-type:visited	{
+	color: black;
+}
+
+
+
+
+
+.menu-grid	{
+	display: grid;
+	margin-right: auto;
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+	margin-left: 0;
+	width: 100%;
+	/*height: 300px;*/
+	padding: 0;
+	padding-left: auto;
+	padding-right: auto;
+	max-width: 200px; /* will never get wider than 1200px --> */
+	/*padding: 2em;*/
+	/*background-color: #fff;*/
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	/*grid-template-rows: 1fr 1fr 1fr;*/
+	grid-gap:1em;
+	/*justify-items: center;
+	align-items: center;*/
+}
+
+.menu-result	{
+	background: white;
+	grid-columns: span 1;
+	/*grid-row: 1/2;*/
+}
+
+.nav{
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	font-weight: 400;
+	margin-bottom: 20px;
+	font-size: 0.7em;
+}
+
+a:active	{
+	opacity: 0.3;
+}
+
+.footer-font	{
+	color: white;
+	text-align: center;
+	font-size: 1.2em;
+	padding-top: 20px;
+}
+
+/*	Generally, you will only want one container element in
+	the document, wrapping around the main content area.
+	If you have more than one container, you are probably doing
+	something wrong.
+*/
+
+.logo-image-grid	{
+	/*margin-top: 300px;*/
+	background-color: #fff;
+	align-content: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	height: 60px;
+	width: 60px;
+	margin: auto;
+}
+
+.logo-background-image	{
+	background-image: url("../img/m_button.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	align-content: center;
+	margin-top: 40px;
+	/*transition: 0.7s;*/
+	/*background-size: 1000px 1000px;*/
+}
+
+.logo-background-image:hover	{
+	transition: 0.3s;
+	opacity: 0.5;
+}
+
+.logo-background-image:visited	{
+	transition: 0.3s;
+	opacity: 0.6;
+}
+
+
+.image-grid	{
+	margin-top: 0px;
+	background-color: #fff;
+	display: block;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	height: 520px;
+	min-width: 200px;
+	width: 100%;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 100px;
+	transition: 0.3s;
+}
+
+.image-grid:hover	{
+	transition: 0.3s;
+	opacity: 0.7;
+}
+
+.background-image	{
+	background-image: url("../img/madcap_logo.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100%;
+	margin-left: 0;
+	padding-left: 0;
+	/*background-size: 1000px 1000px;*/
+}
+
+
+
+.about-grid {
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	width: 100%;
+	/*max-width: 1200px; /* will never get wider than 1200px --> */*/
+	padding: 2em;
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: 1.2fr 3fr;
+	grid-gap:2em;
+	grid-row-gap: 4em;
+}
+
+.about-grid-column {
+	/*background-color: #B6E7F0;*/
+	grid-columns: span 1;
+}
+
+
+.about-image-grid	{
+	/*margin-top: 300px;*/
+	background-color: #fff;
+	/*align-content: left;*/
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	width: 330px;
+	height: 330px;
+	/*max-width: 100%;
+	height:auto;*/
+	/*margin: auto;*/
+	padding: 0;
+}
+
+.about-background-image	{
+	background-image: url("../img/Alice.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+.about-background-image-two	{
+	background-image: url("../img/Amy.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+
+
+
+.production-grid {
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	width: 100%;
+	/*max-width: 1200px; /* will never get wider than 1200px --> */*/
+	padding: 2em;
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap:2em;
+	transition: 0.7s;
+}
+
+.production-grid-column {
+	/*background-color: #B6E7F0;*/
+	grid-columns: span 1;
+}
+
+
+.production-image-grid	{
+	/*margin-top: 300px;*/
+	background-color: #fff;
+	/*align-content: left;*/
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	width: 330px;
+	height: 330px;
+	/*max-width: 100%;
+	height:auto;*/
+	/*margin: auto;*/
+	padding: 0;
+}
+
+.top-box	{
+	height:260px;
+}
+
+.bottom-box	{
+	width: 100%;
+	background-color: #D8D8D8;
+	opacity: 0.9;
+	height: 70px;
+	padding: 10px;
+}
+
+.Alice-background-image	{
+	background-image: url("../img/Alice.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+.AliceM-background-image	{
+	background-image: url("../img/Alice-M.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+.Emily-background-image	{
+	background-image: url("../img/Emily-P.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+
+.Jake-background-image	{
+	background-image: url("../img/Jake-W.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+.Hugo-background-image	{
+	background-image: url("../img/Hugo-N.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+.Amy-background-image	{
+	background-image: url("../img/Amy.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+.Essa-background-image	{
+	background-image: url("../img/Essa.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*align-content: left;*/
+	/*margin-top: 40px;*/
+	transition: 0.7s;
+	padding:0;
+	/*background-size: 1000px 1000px;*/
+}
+
+
+
+.footer	{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:100px;   /* Height of the footer */
+	background:#2D2D2D;
+}
+
+
+
+/* ------------------------------------------------------------ */
+/* media query containing styles for larger screens */
+@media (min-width: 1100px) {
+
+	/* container on larger screens */
+	.container {
+		width: 90%;
+		max-width: 1100px;
+		margin: 2em;
+		margin-right: auto;
+		margin-left: auto;
+		padding:0;
+		min-height: 100%;
+
+		/*padding: 2em;*/
+		/*border: 1px solid #ddd;*/
+	}
+
+	.production-grid {
+		margin-top: 0;
+		margin-right: auto;
+		margin-bottom: 0;
+		margin-left: auto;
+		width: 100%;
+		/*max-width: 1200px; /* will never get wider than 1200px --> */*/
+		padding: 2em;
+		background-color: #fff;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap:2em;
+		transition: 0.7s;
+	}
+
+} /* end media query */
+
+
+@media (max-width: 700px) {
+
+	/* container on larger screens */
+	.container {
+		width: 90%;
+		max-width: 1200px;
+		margin: 2em;
+		margin-right: auto;
+		margin-left: auto;
+		padding:0;
+		min-height: 100%;
+
+		/*padding: 2em;*/
+		/*border: 1px solid #ddd;*/
+	}
+
+h1	{
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 600;
+		font-size: 3em;
+		line-height: 1em;
+		margin-bottom: 0;
+		transition: 0.7;
+	}
+
+	.h2name	{
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 600;
+		font-size: 1.5em;
+		line-height: 1em;
+		/*padding-top: 30px;
+		padding-left: 10px;*/
+		padding-bottom: 3px;
+		padding-right: 0;
+		margin:0;
+		/*margin-top:5px;*/
+		letter-spacing: 1px;
+		text-decoration: none;
+	}
+
+	.production-grid {
+		/*margin-top: 0;*/
+		margin-right: auto;
+		margin-left: auto;
+		width: 100%;
+		/*max-width: 1200px; /* will never get wider than 1200px --> */*/
+		padding: 2em;
+		background-color: #fff;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap:1em;
+		transition: 0.7s;
+	}
+
+	.about-grid {
+		margin-top: 0;
+		margin-right: auto;
+		margin-bottom: 0;
+		margin-left: auto;
+		width: 100%;
+		/*max-width: 1200px; /* will never get wider than 1200px --> */*/
+		padding: 2em;
+		background-color: #fff;
+		display: block;
+		grid-template-columns: 1.2fr 3fr;
+		grid-gap:2em;
+		grid-row-gap: 4em;
+	}
+
+} /* end media query */
